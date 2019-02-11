@@ -8,8 +8,8 @@
 
 ### Association
 has_many :messages
-has_many :groups, through: :user_group
-has_many :user_group
+has_many :groups, through: :user_groups
+has_many :user_groups
 
 ## groups table
 |Column|Type|Options|
@@ -17,11 +17,11 @@ has_many :user_group
 |name|string|null: false|
 
 ### Association
-has_many :users, through: :user_group
+has_many :users, through: :user_groups
 has_many :messages
-has_many :user_group
+has_many :user_groups
 
-## user_group table
+## user_groups table
 
 |Column|Type|Options|
 |------|----|-------|
