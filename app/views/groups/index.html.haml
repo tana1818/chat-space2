@@ -1,0 +1,22 @@
+.wrapper
+
+  .chat-box
+    .login-header
+      .login-header__box
+        %p.login-header__box__user-name
+          =current_user.name
+        %ul.login-header__box__menu
+          %li.login-heder__box__menu__edit-user
+            = link_to new_group_path do
+              %i.fa.fa-users.fa-lg
+          %li.login-heder__box__menu__new-group
+            =link_to edit_user_registration_path(current_user) do
+              %i.fa.fa-cog.fa-lg
+    .groups
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .groups__box
+            %p.groups__box__name
+              = group.name
+            %p.groups__box__comment
+              = group.show_last_message
