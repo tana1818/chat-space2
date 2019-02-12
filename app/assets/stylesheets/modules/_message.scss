@@ -1,0 +1,17 @@
+.upper-message {
+  margin-bottom: 10px;
+  &__user-name {
+    font-size: 18px;
+    font-weight: bold;
+    float: left;
+  }
+  &__date {
+    font-size: 10px;
+    color: gray;
+    float:left;
+  }
+}
+.lower-message {
+  font-size: 15px;
+  float: left;
+}

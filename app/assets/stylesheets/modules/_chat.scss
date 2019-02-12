@@ -19,17 +19,51 @@ body {
         border-bottom: solid 1px #eee;
         padding: 0 40px;
         display: fixed;
+        &-left {
+          float: left;
+          padding-left: 40px;
+          &__name {
+            color: black;
+            font-size: 27px;
+            padding-top: 30px;
+            padding-bottom: 8px;
+            font-weight: bold;
+          }
+          &__member {
+            color: gray;
+            font-size: 12px;
+          }
+        }
+        &-right {
+          padding-top: 30px;
+          float: right;
+          a.btn {
+            // display: block;
+            text-decoration: none;
+            font-size: 16px;
+            height:40px;
+            line-height: 41px;
+            padding: 17px 36px;
+            margin: 28px 0px;
+            margin-right: -13px;
+            text-align: center;
+            color: #38AEF0;
+            color: $white;
+            background-color: $light_blue;
+            transition: 0.3s;
+          }
+        }
       }
       &__messages {
         height: calc(100vh - 289px);
         background-color: #fafafa;
-        overflow: scroll;
+        // overflow: scroll;
         padding: 46px 40px;
       }
-      &__form {
-        height: 90px;
-        background-color: #ddd;
+      // &__form {
+      //   height: 90px;
+      //   background-color: #ddd;
         // padding: 20px 40px;
-      }
+      // }
     }
   }
