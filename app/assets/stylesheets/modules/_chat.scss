@@ -5,17 +5,19 @@ body {
   box-sizing: border-box;
   display: block;
 }
-
+.wrapper::-webkit-scrollbar{
+   display:none;
+ }
 .wrapper {
+  overflow:auto;
   margin: 0;
   padding: 0;
   // height: 100vh;
-  .chat::-webkit-scrollbar{
-    display:none;
-  }
+  width: 100vw;
+
   .chat {
-    overflow-y:auto;
-    -ms-overflow-style:none;
+
+
     width: calc(100vw - 300px);
     float: right;
     height: 100vh;
@@ -24,7 +26,7 @@ body {
         height: 99px;
         border-bottom: solid 1px #eee;
         // padding: 0 40px;
-        position: fixed;
+        // position: fixed;
         background-color: $white;
         width: calc(100vw - 300px);
         &-left {
@@ -63,12 +65,19 @@ body {
           }
         }
       }
+      &__messages::-webkit-scrollbar{
+         display:none;
+        }
       &__messages {
-        height: calc(100vh - 289px);
+        overflow-y:auto;
+        height: calc(100vh - 282px);
         background-color: #fafafa;
         // overflow: scroll;
         padding: 46px 40px;
+        word-wrap: break-word;
+        font-size: 9px;
       }
+
       // &__form {
       //   height: 90px;
       //   background-color: #ddd;

@@ -1,7 +1,8 @@
 .chat__form {
-    position: absolute;
+    // position: absolute;
+    position: relative;
     bottom: 0;
-    right: 0;
+    right: -15;
     height: 90px;
     width: calc(100vw - 300px);
     background-color: #DCDCDC;
