@@ -30,7 +30,7 @@
         .chat__header-left__member
           %p
             Members:
-            -# = @users.pluck(:name).join(",")
+            = @users.pluck(:name).join(" , ")
       .chat__header-right
         = link_to 'Edit', edit_group_path(@group.id), class: "btn"
 

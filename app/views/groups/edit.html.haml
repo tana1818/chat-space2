@@ -13,13 +13,13 @@
       .chat-group-form__field--right
         = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
 
-    .chat-group-form__field.clearfix
-      .chat-group-form__field--left
-        = f.label :チャットメンバーを追加, class: 'chat-group-form__label'
-      .chat-group-form__field--right
-        .chat-group-form__search.clearfix
-          = f.text_field :id, class: 'chat-group-form__input', id: 'user-search-field', placeholder: '追加したいユーザー名を入力してください'
-        .user-search-result
+    -# .chat-group-form__field.clearfix
+    -#   .chat-group-form__field--left
+    -#     = f.label :チャットメンバーを追加, class: 'chat-group-form__label'
+    -#   .chat-group-form__field--right
+    -#     .chat-group-form__search.clearfix
+    -#       = f.text_field :id, class: 'chat-group-form__input', id: 'user-search-field', placeholder: '追加したいユーザー名を入力してください'
+    -#     .user-search-result
 
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
@@ -27,8 +27,8 @@
       .chat-group-form__field--right
         .chat-group-users
           .chat-group-user.clearfix
+            = f.collection_check_boxes :user_ids, User.all, :id, :name
             %p.chat-group-user__name
-              = current_user.name
 
     .chat-group-form__field.clearfix
       .chat-group-form__field--left

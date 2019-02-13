@@ -1,17 +1,17 @@
 
 
-// body {
-//   background-image:image-url('osya.jpg');
-//   background-size:cover;
-//   height: 100vh;
-//   // opacity: 0.6;
-//   box-sizing: border-box;
-// }
+body {
+  background-image:image-url('osya.jpg');
+  background-size:cover;
+  height: 100vh;
+  // opacity: 0.6;
+  box-sizing: border-box;
+}
 
 .account-page {
   .account-page__inner {
     width: 980px;
-    margin: 60 auto;
+    margin: 60px auto;
     padding: 60px;
     background-color: #fff;
     border: 1px solid #ddd;
