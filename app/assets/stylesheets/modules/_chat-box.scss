@@ -1,31 +1,52 @@
 .chat-box {
   width: 300px;
-  color: white;
+  height: 100vh;
+  background-color: $blue;
+  color: $white;
   float: left;
-  align-items: center;
     .login-header {
-      background-color: #253141;
-      height: 100px;
-      padding: 0 20px;
-      display: fixed;
+      // position: fixed;
       &__box {
-        width: 100%;
+        // position: fixed;
+        // background-color: $dark-blue;
+        // padding: 30px 0;
+        // height: 30px;
+        // width: 300px;
         font-weight: bold;
         font-size: 25px;
         justify-content: space-between;
-        display: flex;
-        padding: 31px 0;
+        // display: flex;
+        // height: 100px;
+        height: 100px;
+        background-color: #253141;
+        position: relative;
+        // float: left;
+        &__user-name {
+          float: left;
+          padding: 30px 15px;
+        }
         &__menu {
+          padding: 30px 15px;
           display: flex;
+          float: right;
           ul {
             margin: 0;
             padding: 0;
             // list-style: none;
+            float: right;
           }
           li {
             margin-left: 0.5rem;
             color: white;
             list-style: none;
+          }
+          &__edit-user {
+            // float: right;
+            padding: 50px 70px 0 0;
+          }
+          &__new-group {
+            // float: right;
+            padding-top: 50px;
           }
         }
       }
@@ -35,10 +56,14 @@
       list-style: none;
     }
 
+    .groups::-webkit-scrollbar{
+      display:none;
+    }
     .groups {
       background-color: #2f3e51;
-      height: calc(100vh - 140px);
-      // overflow: scroll;
+      height: calc(100vh - 100px);
+      // height: 85%;
+      overflow: scroll;
       padding: 20px;
       &__box {
         margin-bottom: 30px;

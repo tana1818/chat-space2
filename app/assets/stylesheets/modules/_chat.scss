@@ -10,15 +10,23 @@ body {
   margin: 0;
   padding: 0;
   // height: 100vh;
-
+  .chat::-webkit-scrollbar{
+    display:none;
+  }
   .chat {
-    width: calc(100vw - 315px);
-    float: left;
+    overflow-y:auto;
+    -ms-overflow-style:none;
+    width: calc(100vw - 300px);
+    float: right;
+    height: 100vh;
+    color: $chat-body;
       &__header {
         height: 99px;
         border-bottom: solid 1px #eee;
-        padding: 0 40px;
-        display: fixed;
+        // padding: 0 40px;
+        position: fixed;
+        background-color: $white;
+        width: calc(100vw - 300px);
         &-left {
           float: left;
           padding-left: 40px;
@@ -37,6 +45,7 @@ body {
         &-right {
           padding-top: 30px;
           float: right;
+          padding-right: 53px;
           a.btn {
             // display: block;
             text-decoration: none;
