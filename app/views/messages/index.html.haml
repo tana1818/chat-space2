@@ -1,0 +1,45 @@
+.wrapper
+  .chat-box
+    .login-header
+      .login-header__box
+        %p.login-header__box__user-name
+          =current_user.name
+        %ul.login-header__box__menu
+          %li.login-heder__box__menu__edit-user
+            = link_to new_group_path do
+              %i.fa.fa-users.fa-lg
+          %li.login-heder__box__menu__new-group
+            =link_to edit_user_registration_path(current_user) do
+              %i.fa.fa-cog.fa-lg
+    .groups
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .groups__box
+            %p.groups__box__name
+              = group.name
+            %p.groups__box__comment
+              = group.show_last_message
+
+
+  .chat
+    .chat__header
+      .chat__header-left
+        .chat__header-left__name
+          %p
+            = @group.name
+        .chat__header-left__member
+          %p
+            Members:
+            = @users.pluck(:name).join(" , ")
+      .chat__header-right
+        = link_to 'Edit', edit_group_path(@group.id), class: "btn"
+
+    .chat__messages
+      = render @messages
+    .chat__form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'chat__form__message', placeholder: 'type a message'
+        = f.label :image, id: 'd-image' do
+          = fa_icon 'picture-o', class: 'fa-image'
+          = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'btn'

@@ -1,0 +1,46 @@
+.chat__form {
+    // position: absolute;
+    position: relative;
+    bottom: 0;
+    right: -15;
+    height: 90px;
+    width: calc(100vw - 300px);
+    background-color: #DCDCDC;
+    &__message {
+      position: absolute;
+      background-color: $white;
+      height: 50px;
+      top: 20px;
+      left: 40px;
+      right: 155px;
+      padding-left: 10px;
+      width: calc(100% - 205px);
+      border: none;
+    }
+    .fa-image{
+      position: absolute;
+      top: 35px;
+      right: 155px;
+      padding-right: 10px;
+    }
+    .hidden {
+      display: none;
+    }
+    .btn {
+      position: absolute;
+      background-color: $light-blue;
+      height: 50px;
+      width: 100px;
+      top: 20px;
+      right: 40px;
+      float: right;
+      display: block;
+      text-align: center;
+      transition: 0.3s;
+      cursor: pointer;
+      line-height: 50px;
+      text-align: center;
+      color: $white;
+      font-size: 16px;
+    }
+}
