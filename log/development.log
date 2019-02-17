@@ -16046,3 +16046,182 @@ No template found for MessagesController#create, rendering head :no_content
 Completed 204 No Content in 221ms (ActiveRecord: 2.6ms)
 
 
+Started GET "/groups/7/messages" for 127.0.0.1 at 2019-02-17 13:18:00 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 7 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `user_groups` ON `groups`.`id` = `user_groups`.`group_id` WHERE `user_groups`.`user_id` = 2[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 1 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 3 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 4 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 5 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 6 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 7 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 8 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 9 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 10 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 11 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 16 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 17 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 18 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 19 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 20 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 21 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 22 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 25 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 25 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 25], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 26 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `users`.`name` FROM `users` INNER JOIN `user_groups` ON `users`.`id` = `user_groups`.`user_id` WHERE `user_groups`.`group_id` = 7[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 7[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered messages/index.html.haml within layouts/application (59.0ms)
+  Rendered layouts/_notifications.html.haml (2.2ms)
+Completed 200 OK in 114ms (Views: 96.1ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/groups/7/messages" for 127.0.0.1 at 2019-02-17 13:18:04 +0900
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M3IzG4tpdHHLgBDoFVhDvZ0iNLcIKW+OPeVWA9Zi/hm0uQcA7crOL92oAm/KspUek55FnW+5/pTsAZ5jeV7TBA==", "message"=>{"content"=>"W"}, "commit"=>"Send", "group_id"=>"7"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 7 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES ('W', 7, 2, '2019-02-17 04:18:04', '2019-02-17 04:18:04')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/groups/7/messages
+Completed 302 Found in 15ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/groups/7/messages" for 127.0.0.1 at 2019-02-17 13:18:04 +0900
+Processing by MessagesController#index as HTML
+  Parameters: {"group_id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 7 LIMIT 1[0m
+  Rendering messages/index.html.haml within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT `groups`.* FROM `groups` INNER JOIN `user_groups` ON `groups`.`id` = `user_groups`.`group_id` WHERE `user_groups`.`user_id` = 2[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 1 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 2 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 3 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 4 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 5 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 6 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 7 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 8 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 9 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 10 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 11 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 16 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 17 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 18 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 19 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 20 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 21 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 22 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 25 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 25 ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["group_id", 25], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 26 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`group_id` = 27 ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `users`.`name` FROM `users` INNER JOIN `user_groups` ON `users`.`id` = `user_groups`.`user_id` WHERE `user_groups`.`group_id` = 7[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`group_id` = 7[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2[0m
+  Rendered collection of messages/_message.html.haml [1 times] (3.5ms)
+  Rendered messages/index.html.haml within layouts/application (62.6ms)
+  Rendered layouts/_notifications.html.haml (2.3ms)
+Completed 200 OK in 106ms (Views: 91.2ms | ActiveRecord: 9.3ms)
+
+
+Started POST "/groups/7/messages" for 127.0.0.1 at 2019-02-17 13:18:14 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XCFkB6VM7OKGeKgAacUTR8IYSo7PovbrGlIekpbJi+FvFXwc+FgFrn3erzL/lBb8661FKEOIDvhO3UOVVc3tZA==", "message"=>{"content"=>"４"}, "group_id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 7 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES ('４', 7, 2, '2019-02-17 04:18:14', '2019-02-17 04:18:14')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 228ms (ActiveRecord: 1.8ms)
+
+
+Started POST "/groups/7/messages" for 127.0.0.1 at 2019-02-17 13:18:15 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XCFkB6VM7OKGeKgAacUTR8IYSo7PovbrGlIekpbJi+FvFXwc+FgFrn3erzL/lBb8661FKEOIDvhO3UOVVc3tZA==", "message"=>{"content"=>"４"}, "group_id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 7 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES ('４', 7, 2, '2019-02-17 04:18:15', '2019-02-17 04:18:15')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 196ms (ActiveRecord: 2.9ms)
+
+
+Started POST "/groups/7/messages" for 127.0.0.1 at 2019-02-17 13:18:16 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XCFkB6VM7OKGeKgAacUTR8IYSo7PovbrGlIekpbJi+FvFXwc+FgFrn3erzL/lBb8661FKEOIDvhO3UOVVc3tZA==", "message"=>{"content"=>"４"}, "group_id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 7 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES ('４', 7, 2, '2019-02-17 04:18:16', '2019-02-17 04:18:16')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 208ms (ActiveRecord: 2.8ms)
+
+
+Started POST "/groups/7/messages" for 127.0.0.1 at 2019-02-17 13:18:16 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XCFkB6VM7OKGeKgAacUTR8IYSo7PovbrGlIekpbJi+FvFXwc+FgFrn3erzL/lBb8661FKEOIDvhO3UOVVc3tZA==", "message"=>{"content"=>"４"}, "group_id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 7 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES ('４', 7, 2, '2019-02-17 04:18:16', '2019-02-17 04:18:16')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 203ms (ActiveRecord: 2.8ms)
+
+
+Started POST "/groups/7/messages" for 127.0.0.1 at 2019-02-17 13:18:16 +0900
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XCFkB6VM7OKGeKgAacUTR8IYSo7PovbrGlIekpbJi+FvFXwc+FgFrn3erzL/lBb8661FKEOIDvhO3UOVVc3tZA==", "message"=>{"content"=>"４"}, "group_id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 7 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES ('４', 7, 2, '2019-02-17 04:18:16', '2019-02-17 04:18:16')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+No template found for MessagesController#create, rendering head :no_content
+Started POST "/groups/7/messages" for 127.0.0.1 at 2019-02-17 13:18:16 +0900
+Completed 204 No Content in 205ms (ActiveRecord: 3.2ms)
+
+
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XCFkB6VM7OKGeKgAacUTR8IYSo7PovbrGlIekpbJi+FvFXwc+FgFrn3erzL/lBb8661FKEOIDvhO3UOVVc3tZA==", "message"=>{"content"=>"４"}, "group_id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 7 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES ('４', 7, 2, '2019-02-17 04:18:16', '2019-02-17 04:18:16')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+No template found for MessagesController#create, rendering head :no_content
+Started POST "/groups/7/messages" for 127.0.0.1 at 2019-02-17 13:18:17 +0900
+Completed 204 No Content in 205ms (ActiveRecord: 2.9ms)
+
+
+Processing by MessagesController#create as JSON
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XCFkB6VM7OKGeKgAacUTR8IYSo7PovbrGlIekpbJi+FvFXwc+FgFrn3erzL/lBb8661FKEOIDvhO3UOVVc3tZA==", "message"=>{"content"=>"４"}, "group_id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  `groups`.* FROM `groups` WHERE `groups`.`id` = 7 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`content`, `group_id`, `user_id`, `created_at`, `updated_at`) VALUES ('４', 7, 2, '2019-02-17 04:18:17', '2019-02-17 04:18:17')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+No template found for MessagesController#create, rendering head :no_content
+Completed 204 No Content in 197ms (ActiveRecord: 3.2ms)
+
+
