@@ -4,16 +4,20 @@ $(function(){
     var content = message.is_content_present ? `${message.content} ` : ''
     var image = message.is_image_present ? `<img src='${message.image.url}'> ` : ''
 
-    var html = `<div class = "main-contents__body__list__message" data-id=${message.id}>
-                  <div class = "main-contents__body__list__message__name">
-                    ${message.user_name}
+    var html = `<div class = "message" data-id=${message.id}>
+                  <div class = "upper-message">
+                    <div class = "upper-message__user-name">
+                      ${message.user_name}
+                    </div>
+                    <div class = "upper-message__date">
+                      ${message.date}
+                    </div>
                   </div>
-                  <div class = "main-contents__body__list__message__data">
-                    ${message.date}
-                  </div>
-                  <div class = "main-contents__body__list__message__body">
-                    ${content}
-                    ${image}
+                  <div class = "lower-message">
+                    <div class = "lower-message__content">
+                      ${content}
+                      ${image}
+                    </div>
                   </div>
                 </div>`
     return html;
@@ -34,8 +38,10 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.main-contents__body__list').append(html);
-      $(".main-contents__body").animate({scrollTop:$('.main-contents__body__list')[0].scrollHeight});
+      $('.chat__messages').append(html);
+      $('.form__message').val('');
+      $('.btn').prop('disabled', false);
+      $(".chat").animate({scrollTop:$('.chat__messages')[0].scrollHeight});
       $('.new_message .message').val('');
     })
     .fail(function(){
@@ -67,4 +73,4 @@ $(function(){
 //           clearInterval(interval);
 //         }
 //     } , 5000 );
-// });
+});
