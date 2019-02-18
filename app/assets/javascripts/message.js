@@ -2,7 +2,7 @@ $(function(){
 
   function buildHTML(message){
 
-      addImage = message.image.url ? `<img src="${message.image.url}" class="lower-message__image">` : "";
+      addImage = message.image.url ? `<img src=${message.image.url} class="lower-message__image">` : "";
 
     var html = `<div class = "message" data-id=${message.id}>
                   <div class = "upper-message">
@@ -39,26 +39,25 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.chat__messages').append(html);
-      $('.form__message').reset()
+      $('.form__message').val('');
     })
     .fail(function(){
       alert('投稿できませんでした');
     });
-    return false
+    // return false
   });
   // 自動更新
-  $(function() {
-    $(function() {
+
       if (location.pathname.match(/\/groups\/\d+\/messages/)){
         setInterval(update, 5000);
       }
-    });
+
     function update(){
       if($('.message')[0]){
         var message_id = $('.message:last').data('id');
       }
        else {
-        clearInterval();
+        // clearInterval();
       }
       $.ajax({
         url: location.href,
@@ -68,16 +67,15 @@ $(function(){
       })
 
       .done(function(data){
-        if (data.length){
-        $.each(data, function(i, data){
-          var html = buildHTML(data);
-          $('.chat__messages').append(html)
+          if (data.length){
+          $.each(data, function(i, data){
+            var html = buildHTML(data);
+            $('.chat__messages').append(html)
+          })
+        }
         })
-      }
-      })
       .fail(function(){
         alert('自動更新に失敗しました')
       })
     }
-  });
 });
