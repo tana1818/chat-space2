@@ -1,5 +1,5 @@
 $(function(){
-  //
+
   function buildHTML(message){
       var addImage = '';
     if (message.image.url) {
@@ -47,30 +47,31 @@ $(function(){
     });
     return false
   });
-//   // 自動更新
+  // 自動更新
+  $(function() {
     $(function() {
-      if (location.pathname.match(/\/groups\/\d+\/messages/)) {
-        setInterval(update, 5000);
+      if (location.pathname.match(/\/groups\/\d+\/messages/)){
+        setInterval(update, 10000);
       }
     });
     function update(){
-      if($('.chat__contents__content')[0]){
-        var message_id = $('.chat__contents__content:last').data('message-id');
-      } else {
-        return false
+      if($('.message')[0]){
+        var message_id = $('.message:last').data('id');
       }
-
+       else {
+        clearInterval();
+      }
       $.ajax({
         url: location.href,
         type: 'GET',
-        data: { id : message_id },
+        data: { id: message_id },
         dataType: 'json'
       })
       .done(function(data){
         if (data.length){
         $.each(data, function(i, data){
           var html = buildHTML(data);
-          $('.chat__contents').append(html)
+          $('.chat__messages').append(html)
         })
       }
       })
@@ -79,3 +80,4 @@ $(function(){
       })
     }
   });
+});
