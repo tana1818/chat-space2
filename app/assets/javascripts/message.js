@@ -39,7 +39,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.chat__messages').append(html);
-      $('.form__message').val('');
+      $('.form__message').reset()
     })
     .fail(function(){
       alert('投稿できませんでした');
@@ -72,7 +72,6 @@ $(function(){
         $.each(data, function(i, data){
           var html = buildHTML(data);
           $('.chat__messages').append(html)
-          $('.chat__form')[0].reset();
         })
       }
       })
