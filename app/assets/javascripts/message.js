@@ -5,6 +5,7 @@ $(function(){
     if (message.image.url) {
       addImage = `<img src="${message.image.url}" class="lower-message__image">`;
     }
+
     var html = `<div class = "message" data-id=${message.id}>
                   <div class = "upper-message">
                     <div class = "upper-message__user-name">
@@ -73,6 +74,7 @@ $(function(){
         $.each(data, function(i, data){
           var html = buildHTML(data);
           $('.chat__messages').append(html)
+          $('.chat__form')[0].reset();
         })
       }
       })
