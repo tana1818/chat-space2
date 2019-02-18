@@ -18,5 +18,5 @@ public/
 
 config/secrets.yml
 
-# log
-# tmp
+log/
+tmp/
