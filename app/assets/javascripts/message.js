@@ -7,10 +7,7 @@ $(function(){
     }else {
       var addImage = '';
     }
-
-//     addImage = (message.image.url) ? message.image.urlがtrueの時の記述 : message.image.urlがfalseの時の記述
-// というように記述してください。
-
+    
     var html = `<div class = "message" data-id=${message.id}>
                   <div class = "upper-message">
                     <div class = "upper-message__user-name">
