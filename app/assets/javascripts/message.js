@@ -51,7 +51,7 @@ $(function(){
   $(function() {
     $(function() {
       if (location.pathname.match(/\/groups\/\d+\/messages/)){
-        setInterval(update, 10000);
+        setInterval(update, 5000);
       }
     });
     function update(){
@@ -61,17 +61,21 @@ $(function(){
        else {
         clearInterval();
       }
+console.log(message_id)
       $.ajax({
         url: location.href,
         type: 'GET',
         data: { id: message_id },
         dataType: 'json'
       })
+
       .done(function(data){
+        console.log(data)
         if (data.length){
         $.each(data, function(i, data){
           var html = buildHTML(data);
           $('.chat__messages').append(html)
+          console.log(html)
         })
       }
       })
@@ -80,4 +84,60 @@ $(function(){
       })
     }
   });
+
+  // var interval = setInterval(function() {
+  //     if (location.href.match(/\/groups\/\d+\/messages/)){
+  //       var message_id = $('.chat__message').last().data('id');
+  //       $.ajax({
+  //         url: location.href,
+  //         type: "GET",
+  //         data: {id: message_id},
+  //         dataType: "json"
+  //       })
+  //       .done(function(data) {
+  //         data.forEach(function(message) {
+  //           var html = buildHTML(message);
+  //           $('.chat__messages').append(html);
+  //           $(".chat").animate({scrollTop:$('.chat__messages')[0].scrollHeight});
+  //           $('.new_message .message').val('');
+  //         })
+  //       })
+  //       .fail(function() {
+  //         alert('自動更新に失敗しました');
+  //       });
+  //     } else {
+  //         clearInterval(interval);
+  //       }
+  //   } , 5000 );
+
+  // if (window.location.href.match(/\/groups\/\d+\/messages/)){
+  //      setInterval(autoUpdate,5000)
+  // };
+  //
+  // function autoUpdate() {
+  //   var href = window.location.href;
+  //   var message_id = $('.chat__messages').last().data('id');
+  //   // var lastId = $('.message').last().attr('data-messageid');
+  //
+  //   $.ajax({
+  //     url: href,
+  //     data: {id: message_id},
+  //     dataType:'json',
+  //     type:'GET',
+  //   })
+  //
+  //   .done(function(data) {
+  //      data.messages.forEach(function(message){
+  //        if (message.id > message_id){
+  //          var html = addNewMessagesHTML(message);
+  //          $('.chat__messages').append(html);
+  //          $('.chat').animate({scrollTop: $('.chat__messages')[0].scrollHeight}, 'fast');
+  //        };
+  //      });
+  //   })
+  //   .fail(function(){
+  //     alert('メッセージの取得に失敗しました');
+  //   });
+  // };
+
 });
