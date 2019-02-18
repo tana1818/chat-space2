@@ -7,11 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore all logfiles and tempfiles.
+# Ignore all logfiles and tmpfiles.
 /log/*
 /tmp/*
-!/log/.keep
-!/tmp/.keep
 
 # Ignore Byebug command history file.
 .byebug_history
