@@ -44,7 +44,6 @@ $(function(){
     .fail(function(){
       alert('投稿できませんでした');
     });
-    // return false
   });
   // 自動更新
 
@@ -55,27 +54,28 @@ $(function(){
     function update(){
       if($('.message')[0]){
         var message_id = $('.message:last').data('id');
-      }
-       else {
-        // clearInterval();
-      }
-      $.ajax({
-        url: location.href,
-        type: 'GET',
-        data: { id: message_id },
-        dataType: 'json'
-      })
 
-      .done(function(data){
-          if (data.length){
-          $.each(data, function(i, data){
-            var html = buildHTML(data);
-            $('.chat__messages').append(html)
-          })
-        }
+        $.ajax({
+          url: location.href,
+          type: 'GET',
+          data: { id: message_id },
+          dataType: 'json'
         })
-      .fail(function(){
-        alert('自動更新に失敗しました')
-      })
+
+        .done(function(data){
+          if (data.length){
+            $.each(data, function(data){
+            var html = buildHTML(data);
+            $('.chat__messages').append(html);
+            })
+          }
+        })
+        .fail(function(){
+          alert('自動更新に失敗しました')
+        });
+      }
+      else {
+        clearInterval();
+      }
     }
 });
