@@ -2,7 +2,9 @@ class MessagesController < ApplicationController
   before_action :set_group
 
   def index
+    # @message = Message.order("created_at DESC")
     @message = Message.new
+    # @message = Message.order("created_at DESC")
     @messages = @group.messages.includes(:user)
     respond_to do |format|
       format.html

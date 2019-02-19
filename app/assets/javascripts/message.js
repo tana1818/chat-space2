@@ -25,9 +25,8 @@ $(function(){
   //非同期通信
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    e.stopPropagation();
     var formData = new FormData(this);
-    var url = $(this).attr('action');
+    var url = $(this).attr('action');//attrメソッドは要素がもつ指定の属性の値を返す、指定してないとunderfinedを返す、今回はイベントが発生した要素のaction属性の値を取得してるのでフォームの送信先のurlの値が入っている
     $.ajax({
       url: url,
       type: "POST",
@@ -39,12 +38,14 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.chat__messages').append(html);
-      $('.form__message').val('');
+      $('#message_content').val('');
     })
     .fail(function(){
       alert('投稿できませんでした');
     });
+    return false;
   });
+
   // 自動更新
   if (location.pathname.match(/\/groups\/\d+\/messages/)){
     setInterval(update, 5000);
