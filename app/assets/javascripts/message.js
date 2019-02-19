@@ -46,36 +46,35 @@ $(function(){
     });
   });
   // 自動更新
+  if (location.pathname.match(/\/groups\/\d+\/messages/)){
+    setInterval(update, 5000);
+  }
 
-      if (location.pathname.match(/\/groups\/\d+\/messages/)){
-        setInterval(update, 5000);
-      }
+  function update(){
+    if($('.message')[0]){
+      var message_id = $('.message:last').data('id');
 
-    function update(){
-      if($('.message')[0]){
-        var message_id = $('.message:last').data('id');
+      $.ajax({
+        url: location.href,
+        type: 'GET',
+        data: { id: message_id },
+        dataType: 'json'
+      })
 
-        $.ajax({
-          url: location.href,
-          type: 'GET',
-          data: { id: message_id },
-          dataType: 'json'
-        })
-
-        .done(function(data){
-          if (data.length){
-            $.each(data, function(data){
-            var html = buildHTML(data);
-            $('.chat__messages').append(html);
-            })
-          }
-        })
-        .fail(function(){
-          alert('自動更新に失敗しました')
-        });
-      }
-      else {
-        clearInterval();
-      }
+      .done(function(data){
+        if (data.length){
+          $.each(data, function(data){
+          var html = buildHTML(data);
+          $('.chat__messages').append(html);
+          })
+        }
+      })
+      .fail(function(){
+        alert('自動更新に失敗しました')
+      });
     }
+    else {
+      clearInterval();
+    }
+  }
 });
