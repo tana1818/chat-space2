@@ -5,9 +5,9 @@
 
     .chat-group-form__field.content
       .chat-group-form__field--left
-        = t.label :name, class: 'chat-group-form__label'
+        = t.label :name, class: 'chat-group-form__label'#labelの:nameは指定してないと自動で最初の文字が大文字になる
       .chat-group-form__field--right
-        = t.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
+        = t.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'#test_fieldのnameをとるとエラーになる
 
     .chat-group-form__field.content
       .chat-group-form__field--left
@@ -23,8 +23,7 @@
       .chat-group-users
         .chat-group-user.clearfix
           %input{name: "chat_group[user_ids][]", type: "hidden", value: current_user.id}/
-          %p.chat-group-user__name
-            = current_user.name
+          -# = t.collection_check_boxes :user_ids, User.all, :id, :name
 
     .chat-group-form__field.content
       .chat-group-form__field--left
