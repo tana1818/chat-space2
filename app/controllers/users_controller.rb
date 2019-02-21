@@ -13,7 +13,6 @@ end
 def index
 
   @users = User.where('name LIKE(?)', "%#{params[:name]}%").where.not(id: current_user.id)
-  # binding.pry
   respond_to do |format| #respond_to １つのアクションから複数のフォーマットを定義する
     format.html
     format.json
