@@ -1,25 +1,25 @@
 $(function(){
 
-  function buildHTML(message){
+  function buildSendMessageHTML(message){
 
       addImage = message.image.url ? `<img src=${message.image.url} class="lower-message__image">` : "";
 
-    var html = `< class = "message" data-id=${message.id}>
-                  < class = "upper-message">
-                    < class = "upper-message__user-name">
+    var html = `<div class = "message" data-id=${message.id}>
+                  <div class = "upper-message">
+                    <div class = "upper-message__user-name">
                       ${message.user_name}
-                    </>
-                    < class = "upper-message__date">
+                    </div>
+                    <div class = "upper-message__date">
                       ${message.date}
-                    </>
-                  </>
-                  < class = "lower-message">
-                    < class = "lower-message__content">
+                    </div>
+                  </div>
+                  <div class = "lower-message">
+                    <div class = "lower-message__content">
                       ${message.content}
-                    </>
+                    </div>
                     ${addImage}
-                  </>
-                </>`
+                  </div>
+                </div>`
     return html;
   }
   //非同期通信
@@ -36,7 +36,7 @@ $(function(){
       contentType: false
     })
     .done(function(data){ //非同期通信の結果として返ってくるデータは、done(function(data) { 処理 })の関数の引数で受け取る
-      var html = buildHTML(data);//このdataはサーバーから返されたcreate.json.jbuider
+      var html = buildSendMessageHTML(data);//このdataはサーバーから返されたcreate.json.jbuider
       $('.chat__messages').append(html);
       $('.new_message')[0].reset()// .doneからここまでで、テキストとファイルを投稿&テキスト入力欄をクリア。
     })
