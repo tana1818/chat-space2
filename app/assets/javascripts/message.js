@@ -4,22 +4,22 @@ $(function(){
 
       addImage = message.image.url ? `<img src=${message.image.url} class="lower-message__image">` : "";
 
-    var html = `<div class = "message" data-id=${message.id}>
-                  <div class = "upper-message">
-                    <div class = "upper-message__user-name">
+    var html = `< class = "message" data-id=${message.id}>
+                  < class = "upper-message">
+                    < class = "upper-message__user-name">
                       ${message.user_name}
-                    </div>
-                    <div class = "upper-message__date">
+                    </>
+                    < class = "upper-message__date">
                       ${message.date}
-                    </div>
-                  </div>
-                  <div class = "lower-message">
-                    <div class = "lower-message__content">
+                    </>
+                  </>
+                  < class = "lower-message">
+                    < class = "lower-message__content">
                       ${message.content}
-                    </div>
+                    </>
                     ${addImage}
-                  </div>
-                </div>`
+                  </>
+                </>`
     return html;
   }
   //非同期通信
