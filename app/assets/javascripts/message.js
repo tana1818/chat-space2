@@ -38,7 +38,9 @@ $(function(){
     .done(function(data){ //非同期通信の結果として返ってくるデータは、done(function(data) { 処理 })の関数の引数で受け取る
       var html = buildHTML(data);//このdataはサーバーから返されたcreate.json.jbuider
       $('.chat__messages').append(html);
-      $('#message_content').val('');// .doneからここまでで、テキストとファイルを投稿&テキスト入力欄をクリア。
+      // $('#message_content').val('');
+      $('.new_message')[0].reset()
+      // .doneからここまでで、テキストとファイルを投稿&テキスト入力欄をクリア。
     })
     .fail(function(){ //エラーの場合はfail関数が呼ばれるfail(function(){処理})
       alert('投稿できませんでした');
@@ -66,7 +68,7 @@ $(function(){
         if (data.length){
           $.each(data, function(data){
           var html = buildHTML(data);
-          $('.chat__messages').append(html);
+          $('chat__messages').append(html);
           })
         }
       })
