@@ -23,9 +23,16 @@ $(function(){
     return html;
   }
   //非同期通信
+<<<<<<< HEAD
   $('#new_message').on('submit', function(e){ //new_messageが送信されたらe変数のアクションを起こす
     e.preventDefault();　// 非同期通信でメッセージの投稿を行いたいため、通常の動作を停止。
     var formData = new FormData(this);//fromDataはfromの情報を取得するのに使う
+=======
+  $('#new_message').on('submit', function(e){
+    e.preventDefault();
+    var formData = new FormData(this);
+    console.log(this)
+>>>>>>> master
     var url = $(this).attr('action');//attrメソッドは要素がもつ指定の属性の値を返す、指定してないとunderfinedを返す、今回はイベントが発生した要素のaction属性の値を取得してるのでフォームの送信先のurlの値が入っている
     $.ajax({
       url: url,
