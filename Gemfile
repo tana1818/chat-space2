@@ -64,3 +64,4 @@ gem "font-awesome-rails"
 
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'unicorn'
