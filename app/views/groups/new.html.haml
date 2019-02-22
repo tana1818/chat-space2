@@ -5,16 +5,16 @@
 
     .chat-group-form__field.content
       .chat-group-form__field--left
-        = t.label :name, class: 'chat-group-form__label'
+        = t.label :name, class: 'chat-group-form__label'#labelの:nameは指定してないと自動で最初の文字が大文字になる
       .chat-group-form__field--right
-        = t.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
+        = t.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'#test_fieldの:nameをとるとエラーになる
 
-    -# .chat-group-form__field.content
-    -#   .chat-group-form__field--left
-    -#     = t.label :チャットメンバーを追加, class: 'chat-group-form__label'
-    -#   .chat-group-form__field--right
-    -#     = t.text_field :id, class: 'chat-group-form__input', id: 'user-search-field', placeholder: '追加したいユーザーを入力してください'
-    -#   .user-search-result
+    .chat-group-form__field.content
+      .chat-group-form__field--left
+        = t.label :チャットメンバーを追加, class: 'chat-group-form__label'
+      .chat-group-form__field--right
+        = t.text_field :id, class: 'chat-group-form__input', id: 'user-search-field', placeholder: '追加したいユーザーを入力してください'
+      .user-search-result
 
     .chat-group-form__field.content
       .chat-group-form__field--left
@@ -22,42 +22,12 @@
     .chat-group-form__field--right
       .chat-group-users
         .chat-group-user.clearfix
-          = t.collection_check_boxes :user_ids, User.all, :id, :name
+          = t.hidden_field :name, name: "group[user_ids][]", value: "#{current_user.id}"
+          %p.chat-group-user__name
+            = current_user.name
+        .user-add-result
 
     .chat-group-form__field.content
       .chat-group-form__field--left
       .chat-group-form__field--right
-        = t.submit "登録", class: 'btn'
-
-
--# .chat-group-form
--#  %h1 新規チャットグループ作成
--#
--#  = form_for(@group) do |t|
--#
--#   .chat-group-form__field.content
--#    .chat-group-form__field--left
--#     = t.label :name, class: 'chat-group-form__label'
--#    .chat-group-form__field--right
--#     = t.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: 'グループ名を入力してください'
--#
--#   .chat-group-form__field.content
--#    .chat-group-form__field--left
--#     = t.label :チャットメンバーを追加, class: 'chat-group-form__label'
--#    .chat-group-form__field--right
--#     = t.text_field :id, class: 'chat-group-form__input', id: 'user-search-field', placeholder: '追加したいユーザーを入力してください'
--#    .user-search-result
--#
--#   .chat-group-form__field.content
--#    .chat-group-form__field--left
--#     %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
--#    .chat-group-form__field--right
--#    .chat-group-users
--#     .chat-group-user.clearfix
--#      %p.chat-group-user__name
--#       = current_user.name
--#
--#   .chat-group-form__field.content
--#    .chat-group-form__field--left
--#    .chat-group-form__field--right
--#     = t.submit "登録", class: 'btn'
+        = t.submit "登録", class: 'chat-group-form__action-btn'

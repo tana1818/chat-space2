@@ -1,6 +1,6 @@
 $(function(){
 
-  function buildHTML(message){
+  function buildSendMessageHTML(message){
 
       addImage = message.image.url ? `<img src=${message.image.url} class="lower-message__image">` : "";
 
@@ -23,10 +23,9 @@ $(function(){
     return html;
   }
   //非同期通信
-  $('#new_message').on('submit', function(e){
-    e.preventDefault();
-    var formData = new FormData(this);
-    console.log(this)
+  $('#new_message').on('submit', function(e){ //new_messageが送信されたらe変数のアクションを起こす
+    e.preventDefault();　// 非同期通信でメッセージの投稿を行いたいため、通常の動作を停止。
+    var formData = new FormData(this);//fromDataはfromの情報を取得するのに使う
     var url = $(this).attr('action');//attrメソッドは要素がもつ指定の属性の値を返す、指定してないとunderfinedを返す、今回はイベントが発生した要素のaction属性の値を取得してるのでフォームの送信先のurlの値が入っている
     $.ajax({
       url: url,
@@ -36,12 +35,12 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(data){
-      var html = buildHTML(data);
+    .done(function(data){ //非同期通信の結果として返ってくるデータは、done(function(data) { 処理 })の関数の引数で受け取る
+      var html = buildSendMessageHTML(data);//このdataはサーバーから返されたcreate.json.jbuider
       $('.chat__messages').append(html);
-      $('#message_content').val('');
+      $('.new_message')[0].reset()// .doneからここまでで、テキストとファイルを投稿&テキスト入力欄をクリア。
     })
-    .fail(function(){
+    .fail(function(){ //エラーの場合はfail関数が呼ばれるfail(function(){処理})
       alert('投稿できませんでした');
     });
     return false;
