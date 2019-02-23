@@ -21,7 +21,5 @@ config/secrets.yml
 
 log/
 tmp/
-=======
 
 *.log
->>>>>>> Stashed changes
