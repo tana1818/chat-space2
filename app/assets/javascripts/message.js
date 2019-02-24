@@ -63,6 +63,7 @@ $(function(){
       })
 
       .done(function(data){
+        console.log(data)
         if (data.length){
           $.each(data, function(data){
           var html = buildHTML(data);
