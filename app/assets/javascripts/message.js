@@ -54,7 +54,6 @@ $(function(){
   function update(){
     if($('.message')[0]){
       var message_id = $('.message:last').data('id');
-
       $.ajax({
         url: location.href,
         type: 'GET',
@@ -63,11 +62,10 @@ $(function(){
       })
 
       .done(function(data){
-        console.log(data)
         if (data.length){
-          $.each(data, function(data){
-          var html = buildHTML(data);
-          $('.chat__messages').append(html);
+          $.each(data, function(i,data){
+            var html = buildSendMessageHTML(data);
+            $('.chat__messages').append(html);
           })
         }
       })
