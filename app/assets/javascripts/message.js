@@ -63,7 +63,7 @@ $(function(){
 
       .done(function(data){
         if (data.length){
-          $.each(data, function(i, data){
+          $.each(data, function(data){
             var html = buildSendMessageHTML(data);
             $('.chat__messages').append(html);
           })
