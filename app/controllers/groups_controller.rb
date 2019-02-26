@@ -21,7 +21,7 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    @group.users << current_user
+    # @group.users << current_user ←間違い：group.uesrsの中に自分のidを入れてる
     if @group.save
       redirect_to root_path, notice: 'グループを作成しました'
     else
